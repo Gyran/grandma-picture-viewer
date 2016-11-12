@@ -40,10 +40,6 @@ function makeConfig(options) {
     open: false
   }));
 
-  plugins.push(new webpack.ProvidePlugin({
-    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-  }));
-
   if (options.minimize) {
     plugins.push(new webpack.NoErrorsPlugin());
     plugins.push(new webpack.DefinePlugin({
@@ -101,9 +97,7 @@ function makeConfig(options) {
     root: path.resolve(__dirname),
   };
 
-  var externals = {
-    'config': 'config'
-  }
+  var externals = {}
 
   return {
     entry: entry,
