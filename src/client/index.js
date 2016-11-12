@@ -7,3 +7,10 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+// ugly hack to reload on focus
+window.onblur = () =>  {
+  window.onfocus = () => {
+    location.reload(true)
+  };
+};
