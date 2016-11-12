@@ -4,14 +4,22 @@ import { compose, withState, lifecycle } from 'recompose';
 const enhance = compose(
   withState('images', 'setImages', []),
   lifecycle({
-    componentDidMount()
+    componentDidMount() {
+      fetch('/images');
+    }
   })
 );
 
-const App = enhance(() => {
+const App = enhance(({
+  images,
+}) => {
   return (
     <div>
-      Jao!
+      {
+        images.map((image) => {
+          return <div>{ image }</div>;
+        })
+      }
     </div>
   );
 });

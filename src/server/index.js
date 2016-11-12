@@ -5,9 +5,7 @@ import Html from './html';
 
 function App(req, res) {
   const html = ReactDOMServer.renderToStaticMarkup(
-    <Html
-      title="yepstr"
-    />,
+    <Html />,
   );
   res.send('<!DOCTYPE html>' + html);
 }
