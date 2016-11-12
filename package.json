@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "watch": "node ./node_modules/concurrently/src/main.js --kill-others \"npm run watch-client\" \"npm run start\"",
-    "watch-client": "npm run build-js-debug -- --watch",
+    "watch-client": "npm run build-debug -- --watch",
     "start": "node index.babel.js",
-    "build-js": "webpack -p --config=webpack.config.production.js",
-    "build-js-debug": "webpack -d --config=webpack.config.debug.js",
+    "postinstall": "npm run build",
+    "build": "webpack -p --config=webpack.config.production.js",
+    "build-debug": "webpack -d --config=webpack.config.debug.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
