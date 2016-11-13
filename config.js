@@ -2,7 +2,7 @@ import path from 'path';
 
 // If the app isn't served from an absolute path
 // set this to for example: 'mormor' to server everything from /mormo/...
-export const MOUNT_DIR = '';
+export const MOUNT_DIR = 'mormor';
 
 export const PUBLIC_DIR = 'public';
 export const BUILD_DIR = `${ PUBLIC_DIR }/build`;
